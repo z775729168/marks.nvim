@@ -160,8 +160,9 @@ function Mark:delete_buf_marks(clear)
   utils.remove_buf_signs(bufnr)
   if clear then
     vim.cmd("delmarks!")
-  else
-    vim.notify("not clear")
+    if self.opt.force_write_shada then
+      vim.cmd("wshada!")
+    end
   end
 end
 
