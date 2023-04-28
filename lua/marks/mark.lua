@@ -160,6 +160,8 @@ function Mark:delete_buf_marks(clear)
   utils.remove_buf_signs(bufnr)
   if clear then
     vim.cmd("delmarks!")
+  else
+    vim.notify("not clear")
   end
 end
 
